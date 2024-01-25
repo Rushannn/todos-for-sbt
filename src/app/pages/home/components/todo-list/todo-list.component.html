@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: sticky; top: 0; z-index: 1000;">
+  <div class="container">
+    <h2 class="text-white">Список задач</h2>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <button class="btn btn-primary mb-3" (click)="openModal()">Добавить задачу</button>
+  <div class="row">
+    <div *ngFor="let todo of todoList$ | async">
+      <app-todo-card
+      [todo]="todo"
+      (toggleIsDone)="onToggleIsDone($event)"
+      (deleteTask)="onDeleteTask($event)"
+      ></app-todo-card>
+    </div>
+  </div>
+</div>
+
+

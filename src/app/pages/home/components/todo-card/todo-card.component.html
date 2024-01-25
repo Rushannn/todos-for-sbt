@@ -1,0 +1,27 @@
+<div class="card mb-3" style="background: transparent">
+  <div class="card-body">
+    <h5 class="card-title">{{ todo.taskName }}</h5>
+
+    <ng-container *ngIf="todo.taskDate">
+      <p class="card-text">
+        Дата выполнения:
+        <span [ngClass]="getTextColorClass()">{{todo.taskDate}}</span>
+      </p>
+    </ng-container>
+
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="completedCheckbox"
+        [(ngModel)]="todo.isDone"
+        (ngModelChange)="onCheckboxChange()"
+      />
+      <label class="form-check-label" for="completedCheckbox">
+        Выполнено
+      </label>
+    </div>
+
+    <button class="btn btn-danger mt-2" (click)="onDelete()">Удалить</button>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-header">Authorization</div>
+        <div class="card-body">
+          <div *ngIf="error" class="text-danger">{{error}}</div>
+          <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" formControlName="username">
+              <div *ngIf="authForm.get('username')?.hasError('required') && authForm.get('username')?.touched"
+              class="text-danger">Username is required</div>
+              <div *ngIf="authForm.get('username')?.hasError('minlength') && authForm.get('username')?.touched"
+              class="text-danger">Minimum username length is 3 characters</div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password">
+              <div *ngIf="authForm.get('password')?.hasError('required') && authForm.get('password')?.touched"
+              class="text-danger">Password is required</div>
+              <div *ngIf="authForm.get('password')?.hasError('minlength') && authForm.get('password')?.touched"
+              class="text-danger">Minimum password length is 5 characters</div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="authForm.invalid && false">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

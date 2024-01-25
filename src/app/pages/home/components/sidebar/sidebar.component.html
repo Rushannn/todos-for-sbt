@@ -1,0 +1,27 @@
+<div class="sidebar" [ngClass]="{ expanded: isExpanded }">
+  <div class="header">
+    <div class="toggle" (click)="handleSidebarToggle()">
+      <span class="chevron"></span>
+    </div>
+  </div>
+  <div class="content">
+    <div class="link">
+      <div
+        class="content"
+      >
+        <div class="icon">
+          <img src="assets/img/icons/close-circle-outline.svg" alt="" />
+        </div>
+        <div class="title">Просроченные</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content">
+        <div class="icon">
+          <img src="assets/img/icons/checkmark-circle-outline.svg" alt="" />
+        </div>
+        <div class="title">Выполненные</div>
+      </div>
+    </div>
+  </div>
+</div>

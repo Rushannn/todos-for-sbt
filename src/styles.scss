@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@font-face {
+  font-family: 'MuseoCyrillic500';
+  src: url('./assets/fonts/Museo\ Cyrl\ 500.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'MuseoCyrillic500', sans-serif;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

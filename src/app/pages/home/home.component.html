@@ -1,0 +1,6 @@
+
+<app-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-sidebar>
+
+<div class="content" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
+  <app-todo-list></app-todo-list>
+</div>

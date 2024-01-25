@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h4 class="modal-title">Добавьте новую задачу</h4>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label for="taskName">Наименование задачи:</label>
+    <input type="text" class="form-control" id="taskName" [(ngModel)]="taskName">
+  </div>
+
+  <div class="form-group">
+    <label for="taskDate">Дата выполнения:</label>
+    <input type="date" class="form-control" id="taskDate" [(ngModel)]="taskDate"  [min]="minDate">
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="closeModal()">Закрыть</button>
+  <button type="button" class="btn btn-primary" (click)="saveTask()">Сохранить</button>
+</div>
+
